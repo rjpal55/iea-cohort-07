@@ -1,0 +1,27 @@
+def add_commas(num):
+    snum = str(num)
+    if len(snum) <4:
+        res = (f'{snum}')
+    elif len(snum) ==4:
+        res = (f'{snum[0]},{snum[1:]}')
+    elif len(snum) ==5:
+        res = (f'{snum[0:2]},{snum[2:]}')
+    elif len(snum) ==6:
+        res = (f'{snum[0:3]},{snum[3:]}')
+    elif len(snum) ==7:
+        res = (f'{snum[0]},{snum[1:4]},{snum[4:]}')
+    elif len(snum) ==8:
+        res = (f'{snum[0:2]},{snum[2:5]},{snum[5:]}')
+    elif len(snum) ==9:
+        res = (f'{snum[0:3]},{snum[3:6]},{snum[6:]}')
+    elif len(snum) ==10:
+        res = (f'{snum[0]},{snum[1:4]},{snum[4:6]},{snum[7:]}')
+    elif len(snum) ==11:
+        res = (f'{snum[0:2]},{snum[2:5]},{snum[5:7]},{snum[8:]}')
+    elif len(snum) ==12:
+        res = (f'{snum[0:3]},{snum[3:6]},{snum[6:8]},{snum[9:]}')
+    else:
+        res = (f'Number is too large')
+    return res
+commas = add_commas(12344853)
+print(commas)

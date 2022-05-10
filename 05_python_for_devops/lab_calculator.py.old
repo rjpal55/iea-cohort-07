@@ -1,0 +1,31 @@
+import operator
+
+def calculator(n1,n2,op):
+    if op == '+':
+        op_result = operator.add(n1,n2)
+        return op_result
+    elif op == '-':
+        op_result = operator.sub(n1,n2)
+        return op_result
+    elif op == '*':
+        op_result = operator.mul(n1,n2)
+        return op_result
+    elif op == '/':
+        try:
+            op_result = operator.truediv(n1,n2)
+            return op_result
+        except ZeroDivisionError:
+            print("Cannot divide by zero")
+            return 0
+    elif op == '//':
+        try:
+            op_result = operator.ifloordiv(n1,n2)
+            return op_result
+        except ZeroDivisionError:
+            print("Cannot divide by zero")
+            return 0
+    else:
+        pass
+
+n_result = calculator(13,0,'//')
+print(n_result)
