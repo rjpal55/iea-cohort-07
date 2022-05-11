@@ -26,3 +26,10 @@ print(num_d)
 # print(list_len)
 # print(start_list.count('1'))
 # print(start_list[0])
+
+# detect run - start with a number (1)
+current = numbers[0]
+run = ''
+for n in num:
+if n == current:
+    run a=n
