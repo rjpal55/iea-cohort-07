@@ -1,35 +1,42 @@
-num = ['1','1','1','3','5']
-count1 = 0
-count2 = 0
-count3 = 0
-count4 = 0
-count5 = 0
-count6 = 0
-count7 = 0
-count8 = 0
-count9 = 0
 
-num_d = {}
-# counter = 0
-while num_d[0] == num_d[0]+1:
-for n in num:
-    if n in num_d:
-        num_d[n] += 1
-    else:
-        num_d[n] = 1
-print(num_d)
-    # print(i)
-#         if start_list[counter] == start_list[counter+1]:
-#             print(i)
-#             counter += 1
-# # list_len = [i for i in start_list.count(i)]
-# print(list_len)
-# print(start_list.count('1'))
-# print(start_list[0])
+def conway(num):
+    current = num[0]
+    run = ''
+    run_list = []
+    continue_loop = 'Y'
+    while continue_loop != 'N':
+        for n in num:
+            if n == current:
+                run += n
+            else:
+                # print(run, len(run))
+                run_list.append(len(run))
+                run_list.append(run)
+                current = n
+                run = n
+        # print(run, len(run))
+        run_list.append(len(run))
+        run_list.append(run)
+        # print(run_list)
 
-# detect run - start with a number (1)
-current = numbers[0]
-run = ''
-for n in num:
-if n == current:
-    run a=n
+        rl2 = list(map(str, run_list))
+        rl3 = []
+        for i in rl2:
+            if len(i) > 1:
+                # print(i[0:1])
+                rl3.append(i[0:1])
+            else:
+                # print(i)
+                rl3.append(i)
+        num = "".join(rl3)
+
+        # print(rl3)
+        print(f'The ending Conway number is {num}')
+        continue_loop = str.upper(input("Continue? Enter: (y)es | (n)o | (b)egin new loop "))
+        if continue_loop == "B":
+            rl2 = []
+            num = str(input("Enter a number: "))
+
+num = str(input("Enter a number: "))
+print(f'The starting Conway number is {num}')
+conway(num)
