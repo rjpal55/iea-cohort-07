@@ -3,8 +3,8 @@ def conway(num):
     current = num[0]
     run = ''
     run_list = []
-    continue_loop = 'Y'
-    while continue_loop != 'N':
+    continue_loop = 'C'
+    while continue_loop != 'Q':
         for n in num:
             if n == current:
                 run += n
@@ -32,10 +32,23 @@ def conway(num):
 
         # print(rl3)
         print(f'The ending Conway number is {num}')
-        continue_loop = str.upper(input("Continue? Enter: (y)es | (n)o | (b)egin new loop "))
-        if continue_loop == "B":
+        continue_loop = str.upper(input("(C)ontinue, (N)ew sequence, (Q)uit "))
+        if continue_loop == "C" or continue_loop == "N" or continue_loop == "Q":
+            pass
+        else:
+            continue_loop = str.upper(input("(C)ontinue, (N)ew sequence, (Q)uit "))
+        if continue_loop == "Q":
+            break
+        else:
+            current = num[0]
+            run = ''
+            run_list = []
             rl2 = []
-            num = str(input("Enter a number: "))
+            rl3 =[]
+            if continue_loop == "N":
+                num = str(input("Enter a number: "))
+                current = num[0]
+                print(f'The starting Conway number is {num}')
 
 num = str(input("Enter a number: "))
 print(f'The starting Conway number is {num}')
